@@ -13,7 +13,7 @@ const createVehicle = async (payload: IVehicle) => {
 };
 
 const getAllVehicles = async () => {
-    const result = await pool.query('SELECT * FROM vehicles ORDER BY created_at DESC');
+    const result = await pool.query('SELECT * FROM vehicles ORDER BY id DESC');
     return result.rows;
 };
 
@@ -23,7 +23,7 @@ const getVehicleById = async (id: string) => {
 };
 
 const updateVehicle = async (id: string, payload: Partial<IVehicle>) => {
-    
+
     const fields = Object.keys(payload);
     const values = Object.values(payload);
 
@@ -31,10 +31,10 @@ const updateVehicle = async (id: string, payload: Partial<IVehicle>) => {
 
     const setClause = fields.map((field, index) => `${field} = $${index + 2}`).join(', ');
 
-    
-    
-    
-    
+
+
+
+
     const allowed = ['vehicle_name', 'type', 'registration_number', 'daily_rent_price', 'availability_status'];
     const filteredFields: string[] = [];
     const filteredValues: any[] = [];
@@ -51,15 +51,15 @@ const updateVehicle = async (id: string, payload: Partial<IVehicle>) => {
     const setQuery = filteredFields.map((field, index) => `${field} = $${index + 2}`).join(', ');
 
     const result = await pool.query(
-        `UPDATE vehicles SET ${setQuery}, updated_at = NOW() WHERE id = $1 RETURNING *`,
+        `UPDATE vehicles SET ${setQuery} WHERE id = $1 RETURNING *`,
         [id, ...filteredValues]
     );
     return result.rows[0];
 };
 
 const deleteVehicle = async (id: string) => {
-    
-    
+
+
     const activeBookings = await pool.query(
         `SELECT * FROM bookings WHERE vehicle_id = $1 AND status = 'active'`,
         [id]

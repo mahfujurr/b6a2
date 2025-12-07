@@ -5,6 +5,4 @@ export interface IVehicle {
     registration_number: string;
     daily_rent_price: number;
     availability_status: 'available' | 'booked';
-    created_at?: Date;
-    updated_at?: Date;
 }

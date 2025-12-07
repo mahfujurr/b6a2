@@ -6,6 +6,5 @@ export interface IBooking {
     rent_end_date: string;
     total_price?: number;
     status: 'active' | 'cancelled' | 'returned';
-    created_at?: Date;
-    updated_at?: Date;
+    
 }

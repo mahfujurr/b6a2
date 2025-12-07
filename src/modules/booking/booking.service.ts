@@ -79,7 +79,7 @@ const getAllBookings = async (userId: number, role: string) => {
         params.push(userId);
     }
 
-    query += ` ORDER BY b.created_at DESC`;
+    query += ` ORDER BY b.id DESC`;
 
     const result = await pool.query(query, params);
 
@@ -113,7 +113,7 @@ const updateBooking = async (bookingId: string, status: string) => {
         }
 
         const result = await client.query(
-            `UPDATE bookings SET status = $1, updated_at = NOW() WHERE id = $2 RETURNING *`,
+            `UPDATE bookings SET status = $1 WHERE id = $2 RETURNING *`,
             [status, bookingId]
         );
 
