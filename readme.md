@@ -1,5 +1,4 @@
-```markdown
-#Car Rental Management System - Backend Server
+# Car Rental Management System - Backend Server
 
 **Live URL:** https://b6a2-six.vercel.app
 
@@ -60,7 +59,4 @@ JWT_SECRET=<YOUR_SECURE_SECRET>
 ### 4. Run the development server:
 ```bash
 npm run dev
-```
-
----
 ```
