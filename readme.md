@@ -1,18 +1,18 @@
 ```markdown
-# 🚗 Car Rental Management System - Backend Server
+# Car Rental Management System - Backend Server
 
 **Live URL:** https://b6a2-six.vercel.app
 
 ---
 
-## 📋 **Overview**
+## Overview
 
 This project is a **Node.js + Express** backend powered by **PostgreSQL (NeonDB)**.  
 It includes secure authentication using **JWT** and a clean, modular structure.
 
 ---
 
-## ✨ **Features**
+## Features
 
 - Fully structured Express backend (controllers, services, routes).
 - PostgreSQL database with **Neon serverless platform**.
@@ -23,7 +23,7 @@ It includes secure authentication using **JWT** and a clean, modular structure.
 
 ---
 
-## 🛠 **Technology Stack**
+## Technology Stack
 
 | Technology      | Purpose                          |
 |-----------------|----------------------------------|
@@ -36,7 +36,7 @@ It includes secure authentication using **JWT** and a clean, modular structure.
 
 ---
 
-## 🚀 **Setup & Usage**
+## Setup & Usage
 
 ### 1. Clone the repository:
 ```bash
